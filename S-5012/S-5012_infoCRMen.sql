@@ -3,15 +3,17 @@
 DROP TABLE IF EXISTS [dbo].[EFDS_S5012_infoCRMen]
 CREATE TABLE [dbo].[EFDS_S5012_infoCRMen]
 (
-    [id]            INT IDENTITY (1,1) NOT NULL,
+    -- EventoSubEntityBase
+    [id]                        INT IDENTITY (1,1),
+    [timeStamp]                 DATETIME NULL DEFAULT GETDATE(),
+    [updRegistro]               DATETIME NULL DEFAULT GETDATE(),
+
+    
     [EFDS_S5012Id] INT                NOT NULL,
 
     [CRMen]         CHAR(6)            NULL,
     [vrCRMen]       MONEY              NULL,
-    [vrCRMenSusp]   MONEY              NULL,
-
-    [timeStamp]         DATETIME       NULL DEFAULT GETDATE(),
-    [updRegistro]       DATETIME       NULL DEFAULT GETDATE()
+    [vrCRMenSusp]   MONEY              NULL
 )
 
 
